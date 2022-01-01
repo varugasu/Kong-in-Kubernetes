@@ -49,3 +49,11 @@ helm repo update
 
 helm install -n kong --create-namespace api-gateway kong/kong --set ingressController.installCRDs=false --values kong/values.yaml
 ```
+
+### Sync local configuration to Kong
+
+```
+./deck-sync
+```
+
+Finally, check `http://localhost:8000/mock` in your browser

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+kubectl run -n kong --wait --restart=Never deck --image=kong/deck --command -- sleep 3600
+kubectl wait -n kong --for=condition=ready pods/deck
+kubectl cp ./kong/kong.yaml kong/deck:/tmp/kong.yaml
+kubectl exec -n kong deck -- deck sync --kong-addr=http://api-gateway-kong-admin:8001 -s /tmp/kong.yaml
+kubectl delete -n kong pods/deck
