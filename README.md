@@ -39,3 +39,13 @@ docker-compose up -d
 ```
 kubectl apply -f postgres/
 ```
+
+### Install Kong in Kubernetes
+
+```
+helm repo add kong https://charts.konghq.com
+
+helm repo update
+
+helm install -n kong --create-namespace api-gateway kong/kong --set ingressController.installCRDs=false --values kong/values.yaml
+```

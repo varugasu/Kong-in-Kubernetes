@@ -1,0 +1,31 @@
+namespace: kong
+
+image:
+  repository: kong
+  tag: "2.6"
+
+deployment:
+  daemonset: true
+
+admin:
+  enabled: true
+  type: ClusterIP
+
+  http:
+    enabled: true
+
+env:
+  database: postgres
+  pg_host: database
+  pg_user: kong
+  pg_password: kong
+  pg_database: kong
+  declarative_config: /opt/kong/kong.yaml
+
+proxy:
+  enabled: true
+  type: NodePort
+  http:
+    nodePort: 32080
+  tls:
+    nodePort: 32443
