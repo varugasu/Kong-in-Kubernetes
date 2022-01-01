@@ -3,7 +3,7 @@
 This project seeks to provide an initial structure for **developers** to work with **Kong API Gateway** in a **Kubernetes** cluster. This structure can be used to design, develop, and deploy microservices architectures in a **local development environment**. Nonetheless, it is a fresh and minimal environment perfect for learning about **Kong API Gateway**.
 
 <div align="center">
-    <img src="container_diagram.png" width="75%"/>
+    <img src="images/container_diagram.png" width="75%"/>
 </div>
 
 ## Goals
