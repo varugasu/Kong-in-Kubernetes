@@ -1,0 +1,10 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: kong-in-kubernetes
+nodes:
+  - role: control-plane
+    extraPortMappings:
+      - containerPort: 32080
+        hostPort: 8000
+      - containerPort: 32443
+        hostPort: 8443

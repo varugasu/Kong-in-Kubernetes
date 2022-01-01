@@ -17,3 +17,13 @@ This project seeks to provide an initial structure for **developers** to work wi
 - **Teach about Kubernetes**: this document assumes readers have previous knowledge of the orchestrator.
 - **Production configuration**: this project is meant to be used for local development and personal projects. Although I have plans to elaborate a production-ready Kong and Kuberenetes environment.
 - **Load Balancers**: I will rely on NodePorts because I do not want to add complexity to my local environment.
+
+## Setup
+
+### Create the Kubernetes cluster using `kind`
+
+```
+kind create cluster --config kind.yaml
+```
+
+It will expose the ports `8000` and `8443` on the running machine that are going to forward the HTTP requests to Kong's proxy.
