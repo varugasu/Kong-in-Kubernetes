@@ -33,3 +33,9 @@ It will expose the ports `8000` and `8443` on the running machine that are going
 ```
 docker-compose up -d
 ```
+
+### Create Service for external Postgres database
+
+```
+kubectl apply -f postgres/
+```
