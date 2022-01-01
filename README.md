@@ -27,3 +27,9 @@ kind create cluster --config kind.yaml
 ```
 
 It will expose the ports `8000` and `8443` on the running machine that are going to forward the HTTP requests to Kong's proxy.
+
+### Launch the Postgres database in `kind` network
+
+```
+docker-compose up -d
+```

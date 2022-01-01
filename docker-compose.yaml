@@ -1,0 +1,16 @@
+services:
+  database:
+    image: postgres
+    ports:
+      - 5432:5432
+    networks:
+      - kind
+    environment:
+      POSTGRES_DB: kong
+      POSTGRES_USER: kong
+      POSTGRES_PASSWORD: kong
+
+networks:
+  kind:
+    external: true
+    name: kind
